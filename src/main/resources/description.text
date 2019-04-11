@@ -1,0 +1,71 @@
+固定的
+
+stuId  -  cwId
+
+
+stu
+   - id
+   - nick_name
+   - openid
+   - photo
+   - address
+
+cw
+   - id
+   - name
+   - start_time
+   - end_time
+   - 周一  到  周五
+
+默认一天四节
+
+English  //  Math   //  Chinese   //  History
+
+
+打卡记录
+
+record
+   - user_id
+   - cw_id
+   - crate_date
+   - start_state
+   - end_state
+
+
+paper
+   - id
+   - exam_id
+   - create_user_id
+   - title
+   - pass_line
+   - full_marks
+
+exam
+   - id
+   - choice_id
+   - judge_id
+   _ short_question_id
+
+choice
+   - id
+   - title
+   - correct   //正确选项
+   - option_id
+
+option
+   - id
+   - choice_id  //选择id
+   - content    //内容
+
+
+user_score
+   - id
+   - paper_id
+   - score
+   - completion_time
+
+
+
+
+
+

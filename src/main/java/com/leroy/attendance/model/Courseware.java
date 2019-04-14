@@ -22,13 +22,13 @@ public class Courseware implements Serializable {
      * 上课时间
      */
     @Column(name = "start_time")
-    private Date startTime;
+    private String startTime;
 
     /**
      * 下课时间
      */
     @Column(name = "end_time")
-    private Date endTime;
+    private String endTime;
 
     /**
      * 状态
@@ -82,7 +82,7 @@ public class Courseware implements Serializable {
      *
      * @return start_time - 上课时间
      */
-    public Date getStartTime() {
+    public String getStartTime() {
         return startTime;
     }
 
@@ -91,7 +91,7 @@ public class Courseware implements Serializable {
      *
      * @param startTime 上课时间
      */
-    public void setStartTime(Date startTime) {
+    public void setStartTime(String startTime) {
         this.startTime = startTime;
     }
 
@@ -100,7 +100,7 @@ public class Courseware implements Serializable {
      *
      * @return end_time - 下课时间
      */
-    public Date getEndTime() {
+    public String getEndTime() {
         return endTime;
     }
 
@@ -109,7 +109,7 @@ public class Courseware implements Serializable {
      *
      * @param endTime 下课时间
      */
-    public void setEndTime(Date endTime) {
+    public void setEndTime(String endTime) {
         this.endTime = endTime;
     }
 

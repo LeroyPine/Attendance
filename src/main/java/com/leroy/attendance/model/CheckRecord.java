@@ -35,13 +35,13 @@ public class CheckRecord implements Serializable {
      * 开始状态
      */
     @Column(name = "start_state")
-    private String startState;
+    private Integer startState;
 
     /**
      * 结束状态
      */
     @Column(name = "end_state")
-    private String endState;
+    private Integer endState;
 
     private static final long serialVersionUID = 1L;
 
@@ -122,7 +122,7 @@ public class CheckRecord implements Serializable {
      *
      * @return start_state - 开始状态
      */
-    public String getStartState() {
+    public Integer getStartState() {
         return startState;
     }
 
@@ -131,7 +131,7 @@ public class CheckRecord implements Serializable {
      *
      * @param startState 开始状态
      */
-    public void setStartState(String startState) {
+    public void setStartState(Integer startState) {
         this.startState = startState;
     }
 
@@ -140,7 +140,7 @@ public class CheckRecord implements Serializable {
      *
      * @return end_state - 结束状态
      */
-    public String getEndState() {
+    public Integer getEndState() {
         return endState;
     }
 
@@ -149,7 +149,7 @@ public class CheckRecord implements Serializable {
      *
      * @param endState 结束状态
      */
-    public void setEndState(String endState) {
+    public void setEndState(Integer endState) {
         this.endState = endState;
     }
 }

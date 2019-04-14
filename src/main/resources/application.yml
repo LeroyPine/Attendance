@@ -5,7 +5,7 @@ server:
 spring:
   datasource:
     username: root
-    password: leroy
+    password: 123456
     url: jdbc:mysql://localhost:3306/attendance?serverTimezone=UTC&useUnicode=true&characterEncoding=utf-8
     driver-class-name: com.mysql.cj.jdbc.Driver
 
@@ -35,7 +35,7 @@ spring:
     enum-as-simple-type: true
   mybatis:
     mapper-locations: classpath:mapper/*.xml
-    type-aliases-package: com.leroy.blog.model
+    type-aliases-package: com.leroy.attendance.model
 
   pagehelper:
     helperDialect: mysql

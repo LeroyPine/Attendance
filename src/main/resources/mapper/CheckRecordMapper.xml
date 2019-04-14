@@ -9,7 +9,7 @@
     <result column="user_id" jdbcType="INTEGER" property="userId" />
     <result column="cw_id" jdbcType="INTEGER" property="cwId" />
     <result column="crate_date" jdbcType="TIMESTAMP" property="crateDate" />
-    <result column="start_state" jdbcType="CHAR" property="startState" />
-    <result column="end_state" jdbcType="CHAR" property="endState" />
+    <result column="start_state" jdbcType="INTEGER" property="startState" />
+    <result column="end_state" jdbcType="INTEGER" property="endState" />
   </resultMap>
 </mapper>

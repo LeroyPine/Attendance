@@ -41,6 +41,7 @@ public class CheckRecordController {
             checkRecordMapper.updateByPrimaryKeySelective(checkRecord2);
         }else {
             checkRecord.setCrateDate(new Date());
+            checkRecord.setEndState(0);
             checkRecordMapper.insertSelective(checkRecord);
         }
         RecordVO recordVO = homeIndex(checkRecord.getUserId());
@@ -86,26 +87,26 @@ public class CheckRecordController {
                 switch (record.getCwId()){
                     case 1:
                         if (record.getStartState() != null) {
-                            recordVO.setNoSureForChineseMon(1);
+                            recordVO.setNoSureForChineseMon(record.getStartState());
                         }
                         if (record.getEndState() != null) {
-                            recordVO.setNoSureForChineseAft(1);
+                            recordVO.setNoSureForChineseAft(record.getEndState());
                         }
                         break;
                     case 2:
                         if (record.getStartState() != null) {
-                            recordVO.setNoSureForPathMon(1);
+                            recordVO.setNoSureForPathMon(record.getStartState());
                         }
                         if (record.getEndState() != null) {
-                            recordVO.setNoSureForPathAft(1);
+                            recordVO.setNoSureForPathAft(record.getEndState());
                         }
                         break;
                     case 3:
                         if (record.getStartState() != null) {
-                            recordVO.setNoSureForEngMon(1);
+                            recordVO.setNoSureForEngMon(record.getStartState());
                         }
                         if (record.getEndState() != null) {
-                            recordVO.setNoSureForEngAft(1);
+                            recordVO.setNoSureForEngAft(record.getEndState());
                         }
                         break;
                 }

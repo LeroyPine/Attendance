@@ -2,7 +2,7 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>家电维修管理系统</title>
+    <title>考试测评</title>
 
     <script src="/js/jquery-1.9.1.min.js"></script>
     <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
@@ -24,11 +24,10 @@
 <nav class="navbar navbar-inverse" role="navigation">
     <div class="container-fluid">
         <div class="navbar-header">
-            <a class="navbar-brand" href="#">家电维修管理系统</a>
+            <a class="navbar-brand" href="#">考试测评系统</a>
         </div>
         <div>
             <ul class="nav navbar-nav navbar-right">
-                <li>欢迎您,<span id="adminname" th:text="${name}"></span>管理员</a>
                 </li>
                 <li><a href="/login.html">安全退出</a>
                 </li>
@@ -44,9 +43,7 @@
         <div class="col-sm-2">
             <a href="#" class="list-group-item active">Admin</a>
             <a href="#" onclick="menuClick('/content.html')" class="list-group-item">
-                <img src="/images/student.png" height="25px">维修单管理</a>
-            <a href="#" onclick="menuClick('/repairShopList.html')" class="list-group-item">
-                <img src="/images/student.png" height="25px">维修店管理</a>
+                <img src="/images/student.png" height="25px">添加试卷</a>
         </div>
         <div class="col-sm-10">
             <div class="modal-body">

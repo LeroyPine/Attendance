@@ -7,74 +7,38 @@
     <script src="/js/jquery-1.9.1.min.js"></script>
     <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
     <script src="/bootstrap/js/bootstrap.min.js"></script>
-    <script type="text/javascript">
 
-        function updateState(state,appid) {
-                var result = confirm("确认通过该维修单?");
-                if (result){
-                    $.ajax({
-                        url:"/appointment/updateState?appointId="+appid+"&state="+state,
-                        success: function(data){
-                            if(data == "suc"){
-                                document.getElementById(""+appid+"").innerHTML= "预约成功";
-                            }else{
-                                document.getElementById(""+appid+"").innerHTML= "预约失败";
-                            }
-                        }
-
-                    })
-                }
-
-
-        }
-
-    </script>
 </head>
 <body>
 <div class="col-sm-10">
     <div class="panel panel-default">
         <div class="panel-heading">
-            搜索
+            试卷主体
         </div>
         <div class="panel-body">
-            <form role="form" class="form-inline">
+            <form action="/paper/save" method="post"  role="form" class="form-inline">
+                试卷名称:<input type="text" name="title">
+                及格线:<input type="text" name="passLine">
+                总分:<input type="text" name="fullMarks">
                 <div class="form-group">
-                <button type="button" onclick="javascript:location.href='/appointment/listForAdmin'" class="btn btn-default">查询预约单</button>
+                <input type="submit" class="btn btn-default"></input>
+                </div>
+            </form>
+        </div>
+        <div class="panel-body">
+            <form action="/paper/save" method="post"  role="form" class="form-inline">
+                试卷名称:<input type="text" name="title">
+                及格线:<input type="text" name="passLine">
+                总分:<input type="text" name="fullMarks">
+                <div class="form-group">
+                    <input type="submit" class="btn btn-default"></input>
                 </div>
             </form>
         </div>
     </div>
 
 
-    <div class="table-responsive">
-        <table class="table table-striped ">
-            <thead>
-            <tr>
-                <th>维修店名称</th>
-                <th>家电名称</th>
-                <th>故障原因</th>
-                <th>使用年限</th>
-                <th>申&nbsp;请&nbsp;人</th>
-                <th>审核状态</th>
-                <th>审批操作</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr th:each="appoint:${appointmentData}">
-                <td><span th:text="${appoint.repairName}"></span></td>
-                <td><span th:text="${appoint.electName}"></span> </td>
-                <td><span th:text="${appoint.pheno}"></span> </td>
-                <td><span th:text="${appoint.age}"></span> </td>
-                <td><span th:text="${appoint.username}"></span> </td>
-                <td><span th:id="${appoint.id}" th:text="${appoint.state}"></span> </td>
-                <td>
-                    <a href="javascript:void(0)" th:onclick="|javascript:updateState(1,'${appoint.id}')|"><span th:text = "${appoint.id !=null}?'通过':''"></span></a>
-                    <a href="javascript:void(0)" th:onclick="|javascript:updateState(0,'${appoint.id}')|"><span th:text = "${appoint.id !=null}?'拒绝':''"></span></a>
-                </td>
-            </tr>
-            </tbody>
-        </table>
-    </div>
+
 </div>
 </body>
 </html>

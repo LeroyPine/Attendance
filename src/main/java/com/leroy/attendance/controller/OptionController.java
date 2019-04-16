@@ -18,7 +18,7 @@ public class OptionController {
     @Resource
     private OptionService optionService;
 
-    public void save(@Validated Option option) {
+    public void save(Option option) {
 
     }
 

@@ -13,10 +13,10 @@ public class Choice implements Serializable {
     private String correct;
 
     /**
-     * 选项id
+     * 试卷id
      */
-    @Column(name = "option_id")
-    private Integer optionId;
+    @Column(name = "paper_id")
+    private Integer paperId;
 
     private static final long serialVersionUID = 1L;
 
@@ -62,21 +62,22 @@ public class Choice implements Serializable {
         this.correct = correct;
     }
 
+
     /**
-     * 获取选项id
+     * 获取试卷id
      *
-     * @return option_id - 选项id
+     * @return paper_id - 试卷id
      */
-    public Integer getOptionId() {
-        return optionId;
+    public Integer getPaperId() {
+        return paperId;
     }
 
     /**
-     * 设置选项id
+     * 设置试卷id
      *
-     * @param optionId 选项id
+     * @param paperId 试卷id
      */
-    public void setOptionId(Integer optionId) {
-        this.optionId = optionId;
+    public void setPaperId(Integer paperId) {
+        this.paperId = paperId;
     }
 }

@@ -1,4 +1,5 @@
 package ${basePackage}.${projectName}.controller;
+import org.springframework.stereotype.Controller;
 import ${basePackage}.${projectName}.model.${modelNameUpperCamel};
 import ${basePackage}.${projectName}.service.${modelNameUpperCamel}Service;
 import org.springframework.web.bind.annotation.PostMapping;

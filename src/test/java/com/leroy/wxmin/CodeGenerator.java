@@ -44,7 +44,7 @@ public class CodeGenerator {
 
 
 
-		genCode("check_record","choice","courseware","exam","option","paper","user_info","user_score");
+	//	genCode("paper");
 		// genService("mchtadd", null);
 		//genModelAndMapper("ep_qs_answer", null);
 		//genModelAndMapper("ep_qj_answer", null);

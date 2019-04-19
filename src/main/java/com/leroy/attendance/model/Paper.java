@@ -12,12 +12,6 @@ public class Paper implements Serializable {
     private Integer id;
 
     /**
-     * 试卷id
-     */
-    @Column(name = "exam_id")
-    private Integer examId;
-
-    /**
      * 创建人id
      */
     @Column(name = "create_user_id")
@@ -58,24 +52,6 @@ public class Paper implements Serializable {
      */
     public void setId(Integer id) {
         this.id = id;
-    }
-
-    /**
-     * 获取试卷id
-     *
-     * @return exam_id - 试卷id
-     */
-    public Integer getExamId() {
-        return examId;
-    }
-
-    /**
-     * 设置试卷id
-     *
-     * @param examId 试卷id
-     */
-    public void setExamId(Integer examId) {
-        this.examId = examId;
     }
 
     /**

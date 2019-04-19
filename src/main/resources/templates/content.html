@@ -7,20 +7,43 @@
     <script src="/js/jquery-1.9.1.min.js"></script>
     <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
     <script src="/bootstrap/js/bootstrap.min.js"></script>
+    <style type="text/css">
+        .listTable th,td{
+            padding-left:60px
+        }
+        .question{
+            width:700px;
+            height: 700px;
+            background: beige;
+            opacity:0.8;
+            position: absolute;
+            left:50%;
+            top:50%;
+            margin-left:-350px;
+            margin-top:-350px;
+        }
+    </style>
     <script type="text/javascript">
+        function query() {
+            window.location.href = "paper/list";
+        }
+       /* var n = 1;
         function addElement() {
-            alert(123)
+            console.log(n)
+            if (n > 4){
+                alert("最多添加4个选项")
+                return;
+            }
             var optionClass = document.getElementById("option");
             var newInput = document.createElement("input");
-            var button = document.createElement("button");
+            var newline = document.createElement("br");//创建一个BR标签是为能够换行！
             newInput.type = "text";
             newInput.name = "content";
+            optionClass.appendChild(newline);
             optionClass.appendChild(newInput);
-            button.onClick = addElement();
-            optionClass.appendChild(button)
-            var newline = document.createElement("br/");//创建一个BR标签是为能够换行！
-            newInput.appendChild(newline);
-        }
+            n++;
+
+        }*/
     </script>
 
 </head>
@@ -30,29 +53,48 @@
         <div class="panel-heading">
             试卷主体
         </div>
-        <form action="/paper/save" method="post" role="form" class="form-inline">
+        <form action="/paper/save" method="post">
             <div class="panel-body">
-
                 试卷名称:<input type="text" name="title">
                 及格线:<input type="text" name="passLine">
                 总分:<input type="text" name="fullMarks">
                 <div class="form-group">
-                    <input type="submit" class="btn btn-default">
-                </div>
-
-            </div>
-            <div class="panel-body">
-                <span id="choice">请添加选择题</span>
-                <div class="choice-box">
-                    选择题名称:<input type="text" name="choiceTitle"><br/>
-                    &nbsp;&nbsp;
-                    <div class="option" id="option">
-                        请输入选项:<input type="text" name="content">
-                        <button onclick="addElement()">添加</button>
-                    </div>
+                    <input type="submit" value="创建试卷" class="btn btn-default"/>
                 </div>
             </div>
         </form>
+        <div class="form-group">
+            <button class="btn btn-default" onclick="query()">查询试卷列表</button></div>
+        <table class="listTable">
+            <thead>
+            <tr>
+                <th>序号</th>
+                <th>试卷名称</th>
+                <th>满分</th>
+                <th>及格线</th>
+                <th>创建人</th>
+                <th>操作</th>
+            </tr>
+            </thead>
+            <tbody th:remove="all-but-first">
+            <tr th:each="paper,paperStat:${paperList}">
+                <td th:text="${paperStat.index+1}"></td>
+                <td th:text="${paper.title}"></td>
+                <td th:text="${paper.fullMarks}"></td>
+                <td th:text="${paper.passLine}"></td>
+                <td th:text="${paper.createUserId} == null ? Admin : ''"></td>
+                <a href="/paper/find"><td th:text="${paper.createUserId} == null ? '查看': '' "></td></a>
+            </tr>
+
+            </tbody>
+        </table>
+
+
+    </div>
+
+
+    <div class="question">
+        测试页面
     </div>
 
 

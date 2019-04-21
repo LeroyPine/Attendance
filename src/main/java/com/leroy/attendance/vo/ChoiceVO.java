@@ -1,22 +1,31 @@
 package com.leroy.attendance.vo;
 
 import com.leroy.attendance.model.Choice;
-import com.leroy.attendance.model.Option;
+import com.leroy.attendance.model.Optionn;
 
 import java.util.List;
 
 public class ChoiceVO {
 
+    private String examTitle;
 
     private Choice choice;
 
-    private List<Option> optionList;
+    private List<Optionn> optionList;
 
-    public List<Option> getOptionList() {
+    public List<Optionn> getOptionList() {
         return optionList;
     }
 
-    public void setOptionList(List<Option> optionList) {
+    public String getExamTitle() {
+        return examTitle;
+    }
+
+    public void setExamTitle(String examTitle) {
+        this.examTitle = examTitle;
+    }
+
+    public void setOptionList(List<Optionn> optionList) {
         this.optionList = optionList;
     }
 

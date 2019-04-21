@@ -3,7 +3,7 @@ package com.leroy.attendance.model;
 import java.io.Serializable;
 import javax.persistence.*;
 
-public class Option implements Serializable {
+public class Optionn implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;

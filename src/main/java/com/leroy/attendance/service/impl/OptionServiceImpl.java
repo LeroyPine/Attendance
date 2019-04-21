@@ -1,8 +1,7 @@
 package com.leroy.attendance.service.impl;
 
-import com.leroy.attendance.dao.OptionMapper;
-import com.leroy.attendance.model.Option;
-import com.leroy.attendance.service.OptionService;
+import com.leroy.attendance.dao.OptionnMapper;
+import com.leroy.attendance.service.OptionnService;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -14,9 +13,9 @@ import javax.annotation.Resource;
  */
 @Service
 @Transactional
-public class OptionServiceImpl  implements OptionService {
+public class OptionServiceImpl implements OptionnService {
     @Resource
-    private OptionMapper optionMapper;
+    private OptionnMapper optionMapper;
     
 
 

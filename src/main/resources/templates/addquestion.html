@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>主要内容</title>
+    <script src="/js/jquery-1.9.1.min.js"></script>
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+    <script type="text/javascript">
+        function addqu() {
+            $.ajax({
+                //几个参数需要注意一下
+                type: "POST",//方法类型
+                url: "/choice/save" ,//url
+                data: $('#form1').serialize(),
+                success: function (result) {
+                    console.log(result);//打印服务端返回的数据(调试用)
+                    var name=confirm("添加成功，是否继续添加")
+                    if (name)
+                    {
+                        alert(123)
+                        clearInput();
+                    }
+                    ;
+                },
+                error : function() {
+                    alert("异常！");
+                }
+            });
+        }
+        
+        function clearInput() {
+            $("input[ type='text' ]").val("")
+
+        }
+    </script>
+</head>
+<body>
+<div class="col-sm-10">
+  <form id="form1" action="" method="post">
+      请输入你要绑定的试卷名称: <input type="text" name="paperName"><br/>
+    <div class="saveQuestion" >
+        选择题名:<br/>
+        <input type="text" name="choiceTitle"><br/>
+        A:<input type="text" name="optionTitle"><br/>
+        B:<input type="text" name="optionTitle"><br/>
+        C:<input type="text" name="optionTitle"><br/>
+        D:<input type="text" name="optionTitle"><br/>
+        请输入正确答案的选项:<br/><input type="text" name="correct">
+    </div>
+    <input type="button" onclick="addqu()" value="提交">
+  </form>
+</div>
+</body>
+</html>

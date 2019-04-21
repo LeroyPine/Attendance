@@ -8,42 +8,32 @@
     <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
     <script src="/bootstrap/js/bootstrap.min.js"></script>
     <style type="text/css">
-        .listTable th,td{
-            padding-left:60px
+        .listTable th, td {
+            padding-left: 60px
         }
-        .question{
-            width:700px;
-            height: 700px;
-            background: beige;
-            opacity:0.8;
+
+        .saveQuestion {
+            width: 400px;
+            height: 400px;
+            background: darkgray;
+            opacity: 0.1;
             position: absolute;
-            left:50%;
-            top:50%;
-            margin-left:-350px;
-            margin-top:-350px;
+            left: 50%;
+            top: 50%;
+            margin-left: -200px;
+            margin-top: -200px;
+            display: none;
+            z-index: 5;
         }
     </style>
     <script type="text/javascript">
         function query() {
             window.location.href = "paper/list";
         }
-       /* var n = 1;
-        function addElement() {
-            console.log(n)
-            if (n > 4){
-                alert("最多添加4个选项")
-                return;
-            }
-            var optionClass = document.getElementById("option");
-            var newInput = document.createElement("input");
-            var newline = document.createElement("br");//创建一个BR标签是为能够换行！
-            newInput.type = "text";
-            newInput.name = "content";
-            optionClass.appendChild(newline);
-            optionClass.appendChild(newInput);
-            n++;
 
-        }*/
+        function show() {
+            $("#saveQuestion").css('display', 'block')
+        }
     </script>
 
 </head>
@@ -64,7 +54,8 @@
             </div>
         </form>
         <div class="form-group">
-            <button class="btn btn-default" onclick="query()">查询试卷列表</button></div>
+            <button class="btn btn-default" onclick="query()">查询试卷列表</button>
+        </div>
         <table class="listTable">
             <thead>
             <tr>
@@ -83,18 +74,21 @@
                 <td th:text="${paper.fullMarks}"></td>
                 <td th:text="${paper.passLine}"></td>
                 <td th:text="${paper.createUserId} == null ? Admin : ''"></td>
-                <a href="/paper/find"><td th:text="${paper.createUserId} == null ? '查看': '' "></td></a>
+                <td><a th:href="@{'/paper/detail?paperId='+${paper.id}}">查看</a></td>
             </tr>
 
             </tbody>
         </table>
-
-
     </div>
 
 
-    <div class="question">
-        测试页面
+    <div th:each="choiceVO:${choiceVOList}">
+        <span th:text="${choiceVO!= null ? '题目:':'' }"/>
+        <span th:text="${choiceVO.choice.title}"></span>
+        <div th:each="optionL,optionLStat:${choiceVO.optionList}">
+        <span th:text = "${optionLStat.index+1}"></span><span th:text="${optionL.content != null ? '、':''}"/>   <span th:text="${optionL.content}"></span>
+            <span th:text="${optionLStat.index+1+'' == choiceVO.choice.correct ? '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;正确答案':''}"/>
+        </div>
     </div>
 
 

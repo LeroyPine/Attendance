@@ -13,10 +13,10 @@
         }
     </script>
 
-    <script th:inline="javascript">
+   <!-- <script th:inline="javascript">
         var username = [[${name}]];
         localStorage.setItem("adminUserName",username)
-    </script>
+    </script>-->
 
 </head>
 <body>
@@ -44,6 +44,8 @@
             <a href="#" class="list-group-item active">Admin</a>
             <a href="#" onclick="menuClick('/content.html')" class="list-group-item">
                 <img src="/images/student.png" height="25px">添加试卷</a>
+            <a href="#" onclick="menuClick('/addquestion.html')" class="list-group-item">
+                <img src="/images/student.png" height="25px">添加试题</a>
         </div>
         <div class="col-sm-10">
             <div class="modal-body">

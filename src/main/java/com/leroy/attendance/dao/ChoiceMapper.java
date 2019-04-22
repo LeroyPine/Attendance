@@ -14,4 +14,8 @@ public interface ChoiceMapper extends Mapper<Choice> {
 
    @Select("select * from choice where paper_id = #{paperId}")
    List<Choice> selectChoiceListByPaperId(@Param("paperId") Integer paperId);
+
+
+   @Select("select correct from choice where paper_id = #{paperId}")
+   List<String> selectChoiceAnswerListByPaperId(@Param("paperId")Integer paperId);
 }

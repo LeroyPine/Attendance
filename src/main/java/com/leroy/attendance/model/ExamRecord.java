@@ -1,13 +1,10 @@
 package com.leroy.attendance.model;
 
-import io.swagger.models.auth.In;
-
 import java.io.Serializable;
-import java.util.Date;
 import javax.persistence.*;
 
-@Table(name = "user_score")
-public class UserScore implements Serializable {
+@Table(name = "exam_record")
+public class ExamRecord implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
@@ -15,12 +12,10 @@ public class UserScore implements Serializable {
     @Column(name = "paper_id")
     private Integer paperId;
 
-    private Integer score;
+    @Column(name = "choice_id")
+    private Integer choiceId;
 
-    @Column(name = "completion_time")
-    private Date completionTime;
-
-    private Integer userId;
+    private Boolean rrect;
 
     private static final long serialVersionUID = 1L;
 
@@ -53,35 +48,30 @@ public class UserScore implements Serializable {
     }
 
     /**
-     * @return score
+     * @return choice_id
      */
-    public Integer getScore() {
-        return score;
-    }
-
-    public void setScore(Integer score) {
-        this.score = score;
+    public Integer getChoiceId() {
+        return choiceId;
     }
 
     /**
-     * @return completion_time
+     * @param choiceId
      */
-    public Date getCompletionTime() {
-        return completionTime;
+    public void setChoiceId(Integer choiceId) {
+        this.choiceId = choiceId;
     }
 
     /**
-     * @param completionTime
+     * @return rrect
      */
-    public void setCompletionTime(Date completionTime) {
-        this.completionTime = completionTime;
+    public Boolean getRrect() {
+        return rrect;
     }
 
-    public Integer getUserId() {
-        return userId;
-    }
-
-    public void setUserId(Integer userId) {
-        this.userId = userId;
+    /**
+     * @param rrect
+     */
+    public void setRrect(Boolean rrect) {
+        this.rrect = rrect;
     }
 }

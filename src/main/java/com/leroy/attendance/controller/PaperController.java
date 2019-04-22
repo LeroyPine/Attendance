@@ -1,28 +1,23 @@
 package com.leroy.attendance.controller;
+
 import com.leroy.attendance.dao.ChoiceMapper;
 import com.leroy.attendance.dao.OptionMapper;
 import com.leroy.attendance.dao.PaperMapper;
 import com.leroy.attendance.model.Choice;
 import com.leroy.attendance.model.Option;
-import com.leroy.attendance.vo.ChoiceVO;
-import com.leroy.attendance.vo.PaperVO;
-import com.sun.org.apache.regexp.internal.RE;
-import org.springframework.stereotype.Controller;
 import com.leroy.attendance.model.Paper;
 import com.leroy.attendance.service.PaperService;
+import com.leroy.attendance.vo.ChoiceVO;
+import com.leroy.attendance.vo.PaperVO;
+import io.swagger.annotations.Api;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.*;
-import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+
 import javax.annotation.Resource;
 import java.util.ArrayList;
 import java.util.List;
-
-
-
-import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiImplicitParam;
-import io.swagger.annotations.ApiImplicitParams;
-import io.swagger.annotations.ApiOperation;
 
 /**
 * Created by leroy on 2019-04-19.

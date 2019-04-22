@@ -115,4 +115,16 @@ public class CheckRecordController {
         return recordVO;
     }
 
+
+
+    @RequestMapping("/findRecords")
+    @ResponseBody
+    @ApiOperation("打卡记录表")
+    public List<CheckRecord> findCheckRecordList(Integer userId){
+        Example example = new Example(CheckRecord.class);
+        Example.Criteria criteria = example.createCriteria();
+        criteria.andEqualTo("userId",userId);
+        List<CheckRecord> checkRecords = checkRecordMapper.selectByExample(example);
+        return checkRecords;
+    }
 }

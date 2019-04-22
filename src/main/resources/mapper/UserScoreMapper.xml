@@ -7,7 +7,8 @@
     -->
     <id column="id" jdbcType="INTEGER" property="id" />
     <result column="paper_id" jdbcType="INTEGER" property="paperId" />
-    <result column="score" jdbcType="VARCHAR" property="score" />
+    <result column="score" jdbcType="INTEGER" property="score" />
+    <result column="user_id" jdbcType="INTEGER" property="userId" />
     <result column="completion_time" jdbcType="TIMESTAMP" property="completionTime" />
   </resultMap>
 </mapper>

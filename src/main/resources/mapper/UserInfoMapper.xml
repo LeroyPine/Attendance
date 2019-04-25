@@ -5,9 +5,11 @@
     <!--
       WARNING - @mbg.generated
     -->
-    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="id" jdbcType="INTEGER" property="id" />
+    <result column="open_id" jdbcType="VARCHAR" property="openId" />
     <result column="nick_name" jdbcType="VARCHAR" property="nickName" />
-    <result column="profile_photo" jdbcType="VARCHAR" property="profilePhoto" />
-    <result column="phone" jdbcType="VARCHAR" property="phone" />
+    <result column="avatar_url" jdbcType="VARCHAR" property="avatarUrl" />
+    <result column="province" jdbcType="VARCHAR" property="province" />
+    <result column="city" jdbcType="VARCHAR" property="city" />
   </resultMap>
 </mapper>

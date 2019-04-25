@@ -13,8 +13,9 @@ public class UserScore implements Serializable {
     @Column(name = "paper_id")
     private Integer paperId;
 
-    private String score;
+    private Integer score;
 
+    private Integer userId;
     @Column(name = "completion_time")
     private Date completionTime;
 
@@ -48,17 +49,11 @@ public class UserScore implements Serializable {
         this.paperId = paperId;
     }
 
-    /**
-     * @return score
-     */
-    public String getScore() {
+    public Integer getScore() {
         return score;
     }
 
-    /**
-     * @param score
-     */
-    public void setScore(String score) {
+    public void setScore(Integer score) {
         this.score = score;
     }
 
@@ -74,5 +69,13 @@ public class UserScore implements Serializable {
      */
     public void setCompletionTime(Date completionTime) {
         this.completionTime = completionTime;
+    }
+
+    public Integer getUserId() {
+        return userId;
+    }
+
+    public void setUserId(Integer userId) {
+        this.userId = userId;
     }
 }

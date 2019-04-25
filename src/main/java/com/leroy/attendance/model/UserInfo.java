@@ -5,73 +5,69 @@ import javax.persistence.*;
 
 @Table(name = "user_info")
 public class UserInfo implements Serializable {
-    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+
+    @Column(name = "open_id")
+    private String openId;
 
     @Column(name = "nick_name")
     private String nickName;
 
-    @Column(name = "profile_photo")
-    private String profilePhoto;
+    @Column(name = "avatar_url")
+    private String avatarUrl;
 
-    private String phone;
+    private String province;
+
+    private String city;
 
     private static final long serialVersionUID = 1L;
 
-    /**
-     * @return id
-     */
     public Integer getId() {
         return id;
     }
 
-    /**
-     * @param id
-     */
     public void setId(Integer id) {
         this.id = id;
     }
 
-    /**
-     * @return nick_name
-     */
+    public String getOpenId() {
+        return openId;
+    }
+
+    public void setOpenId(String openId) {
+        this.openId = openId;
+    }
+
     public String getNickName() {
         return nickName;
     }
 
-    /**
-     * @param nickName
-     */
     public void setNickName(String nickName) {
         this.nickName = nickName;
     }
 
-    /**
-     * @return profile_photo
-     */
-    public String getProfilePhoto() {
-        return profilePhoto;
+    public String getAvatarUrl() {
+        return avatarUrl;
     }
 
-    /**
-     * @param profilePhoto
-     */
-    public void setProfilePhoto(String profilePhoto) {
-        this.profilePhoto = profilePhoto;
+    public void setAvatarUrl(String avatarUrl) {
+        this.avatarUrl = avatarUrl;
     }
 
-    /**
-     * @return phone
-     */
-    public String getPhone() {
-        return phone;
+    public String getProvince() {
+        return province;
     }
 
-    /**
-     * @param phone
-     */
-    public void setPhone(String phone) {
-        this.phone = phone;
+    public void setProvince(String province) {
+        this.province = province;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
     }
 }
